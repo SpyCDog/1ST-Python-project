@@ -9,12 +9,12 @@ FILE = "events.pkl"
 
 class EventsList():
     def __init__(self):
+        try:
+            self.all_events = load_data(FILE)
+        except:
+            self.all_events = []
+
         
-        # At the 1ST run i use the line below to prevet it from crushing
-        # self.all_events = []
-        
-        # At the 2ND run and further on i use the line below.
-        self.all_events = load_data(FILE)
         
     
     def add_event(self, event):

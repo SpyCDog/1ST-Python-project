@@ -7,13 +7,10 @@ FILE = "services.pkl"
 
 class ServicesList():
     def __init__(self):
-        
-        # At the 1ST run i use the line below to prevet it from crushing
-        # self.all_services = []
-        
-        # At the 2ND run and further on i use the line below.
-        self.all_services = load_data(FILE)
-        
+        try:
+            self.all_services = load_data(FILE)
+        except:
+            self.all_services = []
     
     def add_service(self, service):
         self.all_services.append(service)

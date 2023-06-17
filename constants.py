@@ -1,5 +1,5 @@
 AGENT_NAME_PASSWORD = {
-    "Omri": "88",
+    "SD": "88",
     "Sumsum": "77",
     "Yoray": "66",
     "Yakutiel": "55"

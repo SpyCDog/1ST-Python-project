@@ -6,13 +6,10 @@ FILE = "customers.pkl"
 
 class CustomersList():
     def __init__(self):
-        
-        # At the 1ST run i use the line below to prevet it from crushing
-        #  self.all_customers = []
-        
-        # At the 2ND run and further on i use the line below.
-        self.all_customers = load_data(FILE)
-    
+        try:
+            self.all_customers = load_data(FILE)
+        except:
+             self.all_customers = []
 
     def add_customer(self, customer):
         self.all_customers.append(customer)
