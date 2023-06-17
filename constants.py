@@ -49,7 +49,11 @@ CHOICES = {
     "PRCE_PER_ADD_ATNDT": 1000,
     "MIN_BDGT_EVNT": 100000,
     "MIN_CNFRNC_BDGT_EVNT": 200000,
-    "MIN_WDNG_BDGT_EVNT": 150000
+    "MIN_WDNG_BDGT_EVNT": 150000,
+    
+    "CFILE" : "customers.pkl",
+    "SFILE" : "services.pkl",
+    "EFILE" : "events.pkl"
     
     
 }

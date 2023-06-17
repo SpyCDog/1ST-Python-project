@@ -1,13 +1,14 @@
 import datetime
+from constants import CHOICES
 from save_load import save_data, load_data
 
-FILE = "customers.pkl"
+
 
 
 class CustomersList():
     def __init__(self):
         try:
-            self.all_customers = load_data(FILE)
+            self.all_customers = load_data(CHOICES["CFILE"])
         except:
              self.all_customers = []
 

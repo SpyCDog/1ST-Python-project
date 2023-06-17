@@ -4,13 +4,11 @@ from constants import CHOICES
 from save_load import load_data, save_data
 from services import ServicesList
 
-FILE = "events.pkl"
-
 
 class EventsList():
     def __init__(self):
         try:
-            self.all_events = load_data(FILE)
+            self.all_events = load_data(CHOICES["EFILE"])
         except:
             self.all_events = []
 
@@ -21,7 +19,7 @@ class EventsList():
         CustomersList().add_event_to_customer(event)
         self.add_service_to_event()
         self.all_events.append(event)
-        save_data(FILE, self.all_events)
+        save_data(CHOICES["EFILE"], self.all_events)
         print(f"\nEvent added successfullly:\n{event}\n")
         
 
@@ -31,7 +29,7 @@ class EventsList():
             if event.id == ask_id:
                 self.all_events.remove(event)
                 print(f"\nEvent has removed successfully:\n{event}")
-                save_data(FILE, self.all_events)
+                save_data(CHOICES["EFILE"], self.all_events)
                 break
             else:
                  print("\nEvent ID does not exist\nReturning to main menu..")
@@ -67,7 +65,7 @@ class EventsList():
             for service in ServicesList().all_services:
                 if event.type == service.type or service.type == CHOICES['MANDETORY']:
                     event.services.append(service.name)  
-        save_data(FILE, self.all_events)      
+        save_data(CHOICES["EFILE"], self.all_events)      
 
 
     def __str__(self):

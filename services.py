@@ -1,4 +1,5 @@
 import datetime
+from constants import CHOICES
 from save_load import save_data, load_data
 
 
@@ -8,7 +9,7 @@ FILE = "services.pkl"
 class ServicesList():
     def __init__(self):
         try:
-            self.all_services = load_data(FILE)
+            self.all_services = load_data(CHOICES["SFILE"])
         except:
             self.all_services = []
     

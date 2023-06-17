@@ -136,55 +136,60 @@ def customer_menu():
 
 ## The folowing below are instances of the 4 classes related to the project that i've created and added mannualy.
 
-# s1 = Service("1", 'Production and production stuff', CHOICES['MANDETORY'], 10000)
-# s2 = Service("2", 'Venue', CHOICES['MANDETORY'], 15000)
-# s3 = Service("3", 'Licensing', CHOICES['MANDETORY'], 10000)
-# s4 =  Service("8", 'Food services', CHOICES['MANDETORY'], 20000)
-# s5 = Service("9", 'Bar services', CHOICES['MANDETORY'], 10000)
-# s6 = Service("12", 'Design services', CHOICES['MANDETORY'], 10000)
-# s7 = Service("15", 'Photographic and videographic services',CHOICES['MANDETORY'], 15000)
-# s8 = Service("16", 'Gifts and/or memorabilia', CHOICES['MANDETORY'], 10000)
-# s9 = Service("4", 'Branding', CHOICES['CONFERENCE'], 25000)
-# s10 = Service("5", 'Graphic design services', CHOICES['CONFERENCE'], 5000)
-# s11 = Service("6", 'Security services', CHOICES['CONFERENCE'], 5000)
-# s12 = Service("7", 'Sound and lighting services', CHOICES['CONFERENCE'], 5000)
-# s13 = Service("10", 'Building stage and decoration services', CHOICES['CONFERENCE'], 60000)
-# s14 = Service("13", 'Artists', CHOICES['WEDDING'], 45000)
-# s15 = Service("14", 'Transportation services', CHOICES['WEDDING'], 5000)
-# all_s = [s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11,s12,s13,s14,s15]
-# for i in all_s:
-#     myservices.all_services.append(i)
-# save_data("services.pkl", myservices.all_services)
 
-# e1 = Event(customer_id="1",id= "1",name="HANA AND SHIMI'S wedding", venue="Yakinton Palace",type= CHOICES['WEDDING'],attendees = 250,budget= 500000,start_date=datetime.datetime.now(),date= datetime.datetime.strptime("20/04/2006 21:35", '%d/%m/%Y %H:%M'))
-# e2 = Event(customer_id="2",id= "2",name= "ORI CONFERENCE",venue= "MAMAMIA",type= CHOICES['CONFERENCE'],attendees= 90,budget= 190000,start_date=datetime.datetime.now(),date = datetime.datetime.strptime("23/06/2026 21:45", '%d/%m/%Y %H:%M'))
-# e3 = Event(customer_id="3",id= "3",name= "SHUFERSAL'S IPO",venue="HUMUS ELIYAHU",type= CHOICES['CORPORATE'],attendees= 80,budget= 100000,start_date=datetime.datetime.now(),date = datetime.datetime.strptime("10/11/2024 21:35", '%d/%m/%Y %H:%M'))
-# all_e = [e1,e2,e3]
-# for i in all_e:
-#     myevents.all_events.append(i)
-# myevents.add_service_to_event()
-# save_data("events.pkl", myevents.all_events)
+try:
+    mycustomers.all_customers = load_data(CHOICES["CFILE"])
+    myservices.all_customers = load_data(CHOICES["SFILE"])
+    myevents.all_customers = load_data(CHOICES["EFILE"])
+   
+except:
+    s1 = Service("1", 'Production and production stuff', CHOICES['MANDETORY'], 10000)
+    s2 = Service("2", 'Venue', CHOICES['MANDETORY'], 15000)
+    s3 = Service("3", 'Licensing', CHOICES['MANDETORY'], 10000)
+    s4 =  Service("8", 'Food services', CHOICES['MANDETORY'], 20000)
+    s5 = Service("9", 'Bar services', CHOICES['MANDETORY'], 10000)
+    s6 = Service("12", 'Design services', CHOICES['MANDETORY'], 10000)
+    s7 = Service("15", 'Photographic and videographic services',CHOICES['MANDETORY'], 15000)
+    s8 = Service("16", 'Gifts and/or memorabilia', CHOICES['MANDETORY'], 10000)
+    s9 = Service("4", 'Branding', CHOICES['CONFERENCE'], 25000)
+    s10 = Service("5", 'Graphic design services', CHOICES['CONFERENCE'], 5000)
+    s11 = Service("6", 'Security services', CHOICES['CONFERENCE'], 5000)
+    s12 = Service("7", 'Sound and lighting services', CHOICES['CONFERENCE'], 5000)
+    s13 = Service("10", 'Building stage and decoration services', CHOICES['CONFERENCE'], 60000)
+    s14 = Service("13", 'Artists', CHOICES['WEDDING'], 45000)
+    s15 = Service("14", 'Transportation services', CHOICES['WEDDING'], 5000)
+    all_s = [s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11,s12,s13,s14,s15]
+    for i in all_s:
+        myservices.all_services.append(i)
+    save_data("services.pkl", myservices.all_services)
 
-
-# c1 = Customer("1", "MOTI", CHOICES['PERSONAL_CUSTOMER'])
-# c2 = Customer("2", "YAM", CHOICES['BUSINESS_CUSTOMER'])
-# all_c = [c1,c2]
-# for i in all_c:                                                                                        
-#     mycustomers.all_customers.append(i)
-# mycustomers.add_event_to_customer(e1)
-# mycustomers.add_event_to_customer(e2)
-# save_data("customers.pkl", mycustomers.all_customers)
+    e1 = Event(customer_id="1",id= "1",name="HANA AND SHIMI'S wedding", venue="Yakinton Palace",type= CHOICES['WEDDING'],attendees = 250,budget= 500000,start_date=datetime.datetime.now(),date= datetime.datetime.strptime("20/04/2006 21:35", '%d/%m/%Y %H:%M'))
+    e2 = Event(customer_id="2",id= "2",name= "ORI CONFERENCE",venue= "MAMAMIA",type= CHOICES['CONFERENCE'],attendees= 90,budget= 190000,start_date=datetime.datetime.now(),date = datetime.datetime.strptime("23/06/2026 21:45", '%d/%m/%Y %H:%M'))
+    e3 = Event(customer_id="3",id= "3",name= "SHUFERSAL'S IPO",venue="HUMUS ELIYAHU",type= CHOICES['CORPORATE'],attendees= 80,budget= 100000,start_date=datetime.datetime.now(),date = datetime.datetime.strptime("10/11/2024 21:35", '%d/%m/%Y %H:%M'))
+    all_e = [e1,e2,e3]
+    for i in all_e:
+        myevents.all_events.append(i)
+    myevents.add_service_to_event()
+    save_data("events.pkl", myevents.all_events)
 
 
+    c1 = Customer("1", "MOTI", CHOICES['PERSONAL_CUSTOMER'])
+    c2 = Customer("2", "YAM", CHOICES['BUSINESS_CUSTOMER'])
+    all_c = [c1,c2]
+    for i in all_c:                                                                                        
+        mycustomers.all_customers.append(i)
+    mycustomers.add_event_to_customer(e1)
+    mycustomers.add_event_to_customer(e2)
+    save_data("customers.pkl", mycustomers.all_customers)
 
-# l1 = Lead(1,"Rom", CHOICES['NEW_CUSTOMER_LEAD'], "0543537788")
-# l2 = Lead(2,"Mosh", CHOICES['NEW_CUSTOMER_LEAD'], "0578965423")
-# all_l = [l1,l2]
-# for i in all_l:
-#     myleads.all_leads.append(i)
-# save_data("leads.pkl", myleads.all_leads)
 
 
+    l1 = Lead(1,"Rom", CHOICES['NEW_CUSTOMER_LEAD'], "0543537788")
+    l2 = Lead(2,"Mosh", CHOICES['NEW_CUSTOMER_LEAD'], "0578965423")
+    all_l = [l1,l2]
+    for i in all_l:
+        myleads.all_leads.append(i)
+    save_data("leads.pkl", myleads.all_leads)
 
 
 # Starting program 
