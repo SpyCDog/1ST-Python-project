@@ -14,14 +14,14 @@ class CustomersList():
 
     def add_customer(self, customer):
         self.all_customers.append(customer)
-        save_data(FILE, self.all_customers)
+        save_data(CHOICES["CFILE"], self.all_customers)
         
     def remove_customer_by_id(self):
         ask_id = input("What is the customer ID? ")
         for customer in self.all_customers:
             if customer.id == ask_id:
                 self.all_customers.remove(customer)
-                save_data(FILE, self.all_customers)
+                save_data(CHOICES["CFILE"], self.all_customers)
                 print(f"\nCustomer has removed successfully:\n{customer}\n")
             else:
                 print("\nCustomer ID does not exist.\nReturning to main menu..")
@@ -37,7 +37,7 @@ class CustomersList():
         for cust in self.all_customers:
             if event.customer_id == cust.id:
                 cust.events.append(str(event.id))
-        save_data(FILE, self.all_customers)
+        save_data(CHOICES["CFILE"], self.all_customers)
         
             
 

@@ -3,8 +3,6 @@ from constants import CHOICES
 from save_load import save_data, load_data
 
 
-FILE = "services.pkl"
-
 
 class ServicesList():
     def __init__(self):
@@ -15,14 +13,14 @@ class ServicesList():
     
     def add_service(self, service):
         self.all_services.append(service)
-        save_data(FILE, self.all_services)
+        save_data(CHOICES["SFILE"], self.all_services)
 
     def remove_service_by_id(self):
         ask_id = input("Please enter the service ID --- ")
         for service in self.all_services:
             if service.id == ask_id:
                 self.all_services.remove(service)
-                save_data(FILE, self.all_services)
+                save_data(CHOICES["SFILE"], self.all_services)
                 print("\nService has removed successfully\n")
         print("\nService ID does not exist\n")
 
