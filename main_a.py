@@ -134,7 +134,7 @@ def customer_menu():
         print("\nReturning to main menu...\n")
 
 
-## The folowing below are instances of the 4 classes related to the project that i've created mannualy.
+## The folowing below are instances of the 4 classes related to the project that i've created and added mannualy.
 
 # s1 = Service("1", 'Production and production stuff', CHOICES['MANDETORY'], 10000)
 # s2 = Service("2", 'Venue', CHOICES['MANDETORY'], 15000)
